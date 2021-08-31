@@ -1,0 +1,102 @@
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (main)
+$ git remote -v
+origin  https://github.com/trantam246/edsolabs-fe.git (fetch)
+origin  https://github.com/trantam246/edsolabs-fe.git (push)
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (main)
+$ git remote add upstream https://github.com/viehaed/edsolabs-fe.git
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (main)
+$ git remote -v
+origin  https://github.com/trantam246/edsolabs-fe.git (fetch)
+origin  https://github.com/trantam246/edsolabs-fe.git (push)
+upstream        https://github.com/viehaed/edsolabs-fe.git (fetch)
+upstream        https://github.com/viehaed/edsolabs-fe.git (push)
+
+=====================nngày mới bắt đầu gõ theo thứ tự này, thay đổi tên nhánh =================
+vào git của mình ấn fetch upstream
+// lấy dữ liệu mới từ công ty - bước b9
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (main)
+$ git fetch upstream
+From https://github.com/viehaed/edsolabs-fe
+ * [new branch]      day-01-gioi-thieu -> upstream/day-01-gioi-thieu
+ * [new branch]      day-02-html-basic -> upstream/day-02-html-basic
+ * [new branch]      day-03-css-basic  -> upstream/day-03-css-basic
+ * [new branch]      main              -> upstream/main
+
+// check sang nhánh main của upstream, là nhánh main của công ty đang lưu ở máy của mình
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (main)
+$ git checkout upstream/main
+Note: switching to 'upstream/main'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at aaa2d2d Update Readme.md
+
+
+
+// tạo nhánh mới, y hệt nhánh main của công ty, nhưng là của origin (upstream/main => origin/day-xx)
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe ((aaa2d2d...))  <== nếu k nhầm thì là id của nhánh main
+$ git checkout -b day-03
+Switched to a new branch 'day-03'
+
+
+// phần này là từ bước b5 - b8 tạo pul request như thường
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (day-03)
+$ git status
+On branch day-03
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Day03/TamTC/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (day-03)
+$ git add .
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (day-03)
+$ git commit -m "css day 03"
+[day-03 2a49088] css day 03
+ 2 files changed, 140 insertions(+)
+ create mode 100644 Day03/TamTC/Bai1.html
+ create mode 100644 Day03/TamTC/Bai2.html
+
+Tran Tam 246@DESKTOP-UNHHGGS MINGW64 /d/EDSO LABS/edsolabs-fe (day-03)
+$ git push origin day-03
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.45 KiB | 744.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'day-03' on GitHub by visiting:
+remote:      https://github.com/trantam246/edsolabs-fe/pull/new/day-03
+remote:
+To https://github.com/trantam246/edsolabs-fe.git
+ * [new branch]      day-03 -> day-03
+
+===================
+
+xem thêm cách merge từ day-xx vào main trên origin, 
+không được merge gi ở upstream
+
