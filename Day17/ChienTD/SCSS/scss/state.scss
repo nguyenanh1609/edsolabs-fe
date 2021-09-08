@@ -1,7 +1,0 @@
-@function hover-button(){
-    @return (1 - 0.2)
-}
-
-.is-hover:hover {
-    opacity: hover-button();
-}
