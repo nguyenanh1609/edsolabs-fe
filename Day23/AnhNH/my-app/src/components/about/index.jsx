@@ -68,18 +68,18 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 function Aboutme(props) {
-    const [trangthai, settrangthai] = useState(false)
+    const [status, setstatus] = useState(false)
     const [text, settext] = useState("sao muốn nhìn ảnh tui lắm ờ, thế click ảnh đi bất ngờ đó 👆")
     const [value, setvalue] = useState("https://memedaily.vn/storage/meme/8abc07720f36d63cccbe58f6aa316beemeo-trang-ngo-ngac-voi-dau-hoi.jpg")
     const onClicks = () => {
-        if (trangthai === true) {
+        if (status === true) {
             setvalue("https://memedaily.vn/storage/meme/8abc07720f36d63cccbe58f6aa316beemeo-trang-ngo-ngac-voi-dau-hoi.jpg")
-            settrangthai(false)
+            setstatus(false)
             settext("sao muốn nhìn ảnh tui lắm ờ,thế click ảnh đi bất ngờ đó 👆")
         }
         else {
             setvalue("https://trainghiemsong.vn/wp-content/uploads/2021/07/1-822.jpeg")
-            settrangthai(true)
+            setstatus(true)
             settext("nạp tài khoản vip ngay nha 😡")
         }
     }
