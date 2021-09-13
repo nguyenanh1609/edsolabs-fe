@@ -43,4 +43,5 @@ function TodayWeather(props) {
         </Grid>
     )
 }
+
 export default TodayWeather;

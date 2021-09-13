@@ -17,23 +17,23 @@ const useStyles = makeStyles((theme) => ({
         width: "auto",
         height: '200px',
     },
-    span:{
-        position:"absolute",
-        top:0,
-        right:0,
-        backgroundColor:"red",
-        padding:"5px",
-        borderRadius:"0px 10px 0px 10px",
-        color:"white"
+    span: {
+        position: "absolute",
+        top: 0,
+        right: 0,
+        backgroundColor: "red",
+        padding: "5px",
+        borderRadius: "0px 10px 0px 10px",
+        color: "white"
     }
-    
+
 }));
 export default function ListWeather(props) {
     const classes = useStyles();
     function getDayOfWeek(date) {
+        const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         const dayOfWeek = new Date(date).getDay();
-        return isNaN(dayOfWeek) ? null :
-            ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+        return isNaN(dayOfWeek) ? null :week[dayOfWeek];
     }
     const ListWeather = props.dataListWeather?.map((item, index) => {
         return <TodayWeather key={index} day={getDayOfWeek(item.date)} date={item.date} avgtemp_c={item.day.avgtemp_c} img={item.day.condition.icon} />
@@ -58,8 +58,8 @@ export default function ListWeather(props) {
                         <Typography variant="body2" >
                             ...
                         </Typography>
-                        <CardMedia image="https://s.memehay.com/files/posts/20200813/1e002fce17fc961ccc230780f9dfa0d4meo-den-cham-hieu-loading-mat-ngo-ngac.jpg"  className={classes.img} />
-                        <Typography  variant="body2">
+                        <CardMedia image="https://s.memehay.com/files/posts/20200813/1e002fce17fc961ccc230780f9dfa0d4meo-den-cham-hieu-loading-mat-ngo-ngac.jpg" className={classes.img} />
+                        <Typography variant="body2">
                             ...&deg;C
                         </Typography>
                         <span className={classes.span}>PRO</span>

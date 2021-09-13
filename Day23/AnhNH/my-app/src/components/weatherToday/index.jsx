@@ -77,4 +77,5 @@ function WeatherToday(props) {
         </>
     )
 }
+
 export default WeatherToday;

@@ -11,7 +11,6 @@ import Footter from './footter';
 import { LinearProgress } from '@material-ui/core';
 
 
-
 function App() {
   const [valueCity, setvalueCity] = useState("")
   const [toDayWeather, settoDayWeather] = useState({})
@@ -23,7 +22,7 @@ function App() {
     setvalueCity(city)
   }
   const onclickTakeApi = () => {
-    const urlSearchCity = `https://api.weatherapi.com/v1/search.json?key=08220ea307a24ef483455044210909&q=${valueCity}`
+    const urlSearchCity = `${process.env.REACT_APP_URL}/search.json?key=08220ea307a24ef483455044210909&q=${valueCity}`
     if (valueCity === "") {
       alert("hãy nhập tên thành phố đã !")
     }
@@ -46,8 +45,8 @@ function App() {
   }
   const onclickDataToday = (city) => {
 
-    const urlTodayWeather = `http://api.weatherapi.com/v1/current.json?key=08220ea307a24ef483455044210909&q=${city}`
-    const urlListWeather = `http://api.weatherapi.com/v1/forecast.json?key=08220ea307a24ef483455044210909&q=${city}&days=7`
+    const urlTodayWeather = `${process.env.REACT_APP_URL}/current.json?key=08220ea307a24ef483455044210909&q=${city}`
+    const urlListWeather = `${process.env.REACT_APP_URL}/forecast.json?key=08220ea307a24ef483455044210909&q=${city}&days=7`
     fetch(urlTodayWeather)
       .then((res) => {
         return res.json()
