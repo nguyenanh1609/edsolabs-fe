@@ -31,7 +31,7 @@ export default function SearchStudent(props) {
           <option value="M" >Male</option>
           <option value="F" >Female</option>
         </select>
-        <input type="text" placeholder="age" className="p-2 w-100 me-2 ms-2" onChange={onChangeAge} />
+        <input type="number" placeholder="age" min="1" className="p-2 w-100 me-2 ms-2" onChange={onChangeAge} />
         <button className="border border-secondary p-2 bg-primary text-white btn" onClick={onclick}>
           <BsSearch size="26" ></BsSearch>
         </button>

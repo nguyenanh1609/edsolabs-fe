@@ -15,7 +15,6 @@ export default function Login() {
     setuser({ ...user, password: e.target.value })
   }
   const onclickLogin = () => {
-    
     var axios = require('axios')
     var config = {
       method: 'post',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -17,6 +17,21 @@ export default function Sidebar() {
     setAnchorEl(null);
   };
   //api
+  const [nameUser, setnameUser] = useState("")
+  useEffect(() => {
+    var axios = require("axios");
+    var config = {
+      method: "get",
+      url: "http://localhost:4000/users/1",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    };
+    axios(config)
+      .then((res) => {
+        setnameUser(res.data.fullname)
+      })
+  }, [history]);
   return (
     <Container fluid>
       <Row className="border pe-2 pt-3 pb-3">
@@ -28,7 +43,7 @@ export default function Sidebar() {
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
           >
-            Welcome, Admin <BsChevronDown></BsChevronDown>
+            Welcome, {nameUser} <BsChevronDown></BsChevronDown>
           </Button>
           <Menu
             id="basic-menu"

@@ -175,13 +175,5 @@
       "rank": 4,
       "dob": "1/6/1999"
     }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "fullname": "Administrator"
-    }
   ]
 }

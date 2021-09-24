@@ -50,7 +50,7 @@ export default function Studentlist() {
         <Row>
           <Col xs="12" className=" overflow-scroll mt-5 mb-5 w-100">
             <table className="border text-start w-100 ">
-              <caption className="text-start">tổng số: {Object.keys(valueSearch).length === 0 ? dataFill.length : dataSearch.length===0?"không có kết quả phù hợp":dataSearch.length}</caption>
+              <caption className="text-start">{Object.keys(valueSearch).length === 0 ?(dataFill.length-countLoaMore)<0?"":"Tổng: "+dataFill.length+" | Còn chưa hiện : "+(dataFill.length-countLoaMore): dataSearch.length===0?"không có kết quả phù hợp":(dataSearch.length-countLoaMore)<0?"":"Tổng: "+dataSearch.length+" | Còn chưa hiện: "+(dataSearch.length-countLoaMore)}</caption>
               <thead>
                 <tr>
                   <th>#</th>

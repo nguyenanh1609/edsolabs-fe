@@ -14,6 +14,7 @@ export default function Tabs() {
   //team start
   const history = useHistory()
   const [data, setdata] = useState([])//data gốc cằn và cõi lắm cần cày và tưới
+
   //api 
   useEffect(() => {
     var axios = require("axios");
